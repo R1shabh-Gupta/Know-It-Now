@@ -4,6 +4,10 @@ import { getQuestionsSchema } from '@/schemas/questions';
 import { NextResponse } from 'next/server';
 import { ZodError } from 'zod';
 
+export const config = {
+  runtime: 'edge',
+};
+
 export async function POST(req: Request, res: Response) {
   try {
     const session = await getAuthSession();
