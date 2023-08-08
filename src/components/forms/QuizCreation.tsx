@@ -63,6 +63,8 @@ const QuizCreation = ({ topic: topicParam }: Props) => {
       onError: (error) => {
         setShowLoader(false);
         if (error instanceof AxiosError) {
+          console.log(error.response?.status);
+          console.log(error?.response);
           if (error.response?.status === 500) {
             console.log(error.response.status);
             toast({
